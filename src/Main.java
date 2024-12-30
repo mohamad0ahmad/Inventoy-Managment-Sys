@@ -41,6 +41,10 @@ public class Main {
                     case 2:
                         System.out.print("Enter item name: ");
                         String orderItem = scanner.nextLine();
+                        if (orderItem.isEmpty() || orderItem.isBlank()) {
+                            System.out.println("Item name cannot be empty!");
+                            break;
+                        }
                         System.out.print("Enter quantity: ");
                         int orderQuantity = scanner.nextInt();
                         system.placeOrder(orderItem.toLowerCase(), orderQuantity+"");
@@ -61,6 +65,10 @@ public class Main {
                     case 6:
                         System.out.print("Enter item name to delete: ");
                         String deleteItem = scanner.nextLine();
+                        if (deleteItem.isEmpty() || deleteItem.isBlank()) {
+                            System.out.println("Item name cannot be empty!");
+                            break;
+                        }
                         system.deleteItem(deleteItem.toLowerCase());
                         break;
 
@@ -83,4 +91,3 @@ public class Main {
         return str.matches(".*\\d.*");
     }
 }
-
